@@ -1,0 +1,143 @@
+<div class="modal fade" id="PassangerModel" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3" style="height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">
+                    {% if form_data.id %} Edit Passenger {% else %} Register Passenger {% endif %}
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Success or Error Messages -->
+                {% if register_success %}
+                <div class="alert alert-success" role="alert">
+                    Registration successful!
+                </div>
+                {% endif %}
+
+                <form method="POST"
+                    action="{% if form_data.id %}{% url 'passenger_edit' form_data.id %}{% else %}{% url 'passenger_create' %}{% endif %}">
+                    {% csrf_token %}
+                    {% if form_data.id %}
+                    <input type="hidden" name="_method" value="PATCH">
+                    {% endif %}
+
+                    <!-- Registration Number -->
+                    <div class="mb-3">
+                        <label for="registration_number" class="form-label">Registration Number:</label>
+                        <input type="text" id="registration_number" class="form-control"
+                            value="{{ form_data.registration_number|default:'' }}" name="registration_number" required>
+                        {% if form_error_message.registration_number %}
+                        <div class="text-danger small">
+                            {{ form_error_message.registration_number|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Passport Number -->
+                    <div class="mb-3">
+                        <label for="passport_number" class="form-label">Passport Number:</label>
+                        <input type="text" id="passport_number" class="form-control"
+                            value="{{ form_data.passport_number|default:'' }}" name="passport_number" required>
+                        {% if form_error_message.passport_number %}
+                        <div class="text-danger small">
+                            {{ form_error_message.passport_number|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- First Name -->
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name:</label>
+                        <input type="text" id="first_name" class="form-control"
+                            value="{{ form_data.first_name|default:'' }}" name="first_name" required>
+                        {% if form_error_message.first_name %}
+                        <div class="text-danger small">
+                            {{ form_error_message.first_name|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name:</label>
+                        <input type="text" id="last_name" class="form-control"
+                            value="{{ form_data.last_name|default:'' }}" name="last_name" required>
+                        {% if form_error_message.last_name %}
+                        <div class="text-danger small">
+                            {{ form_error_message.last_name|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- NIC -->
+                    <div class="mb-3">
+                        <label for="nic" class="form-label">NIC:</label>
+                        <input type="text" id="nic" class="form-control" value="{{ form_data.nic|default:'' }}" name="nic"
+                            required>
+                        {% if form_error_message.nic %}
+                        <div class="text-danger small">
+                            {{ form_error_message.nic|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Mobile Number -->
+                    <div class="mb-3">
+                        <label for="mobile" class="form-label">Mobile Number:</label>
+                        <input type="text" id="mobile" class="form-control"
+                            value="{{ form_data.mobile|default:'' }}" name="mobile" required>
+                        {% if form_error_message.mobile %}
+                        <div class="text-danger small">
+                            {{ form_error_message.mobile|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Telephone -->
+                    <div class="mb-3">
+                        <label for="telephone" class="form-label">Telephone:</label>
+                        <input type="text" id="telephone" class="form-control"
+                            value="{{ form_data.telephone|default:'' }}" name="telephone">
+                        {% if form_error_message.telephone %}
+                        <div class="text-danger small">
+                            {{ form_error_message.telephone|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" id="email" class="form-control"
+                            value="{{ form_data.email|default:'' }}" name="email" required>
+                        {% if form_error_message.email %}
+                        <div class="text-danger small">
+                            {{ form_error_message.email|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Address -->
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address:</label>
+                        <input type="text" id="address" class="form-control"
+                            value="{{ form_data.address|default:'' }}" name="address" required>
+                        {% if form_error_message.address %}
+                        <div class="text-danger small">
+                            {{ form_error_message.address|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">
+                            {% if form_data.id %} Update {% else %} Register {% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

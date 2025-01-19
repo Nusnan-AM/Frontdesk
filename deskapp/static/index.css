@@ -1,0 +1,243 @@
+.bag-primary {
+    background-color: #00629B !important;
+  }
+  
+  .text-cl-primary {
+    color: #00629B !important;
+  }
+  
+  .bag-secondary {
+    background-color: #4CB9E7 !important;
+  }
+  
+  
+  .text-cl-secondary {
+    color: #4CB9E7 !important;
+  }
+  
+  body {
+    background-color: #F8F9FA !important;
+  }
+  
+  .bg-third {
+    background-color: #0E2954 !important;
+  }
+  
+  .text-third {
+    color: #0E2954 !important;
+  }
+
+  .sign-in-container{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 20px;
+    max-width: 540px;
+}
+  
+  /* .form-control{
+    height: 45px;
+  } */
+  
+  .form-control:focus {
+    border-color: #00629B !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 98, 155, 0.25) !important;
+    /* Updated to match the border color */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* .form-select{
+    height: 45px;
+  } */
+  
+  .form-select:focus {
+    border-color: #00629B !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 98, 155, 0.25) !important;
+    /* Updated to match the border color */
+    transition: border-color 0.3s ease;
+  }
+  
+  .body-bag-primary {
+    background-color: #F8F9FA !important;
+  }
+  
+  .body-bag-secondary {
+    background-color: #E9ECEF !important;
+  }
+  
+  .common-shadow {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE and Edge */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  
+  /* CSS for the custom scroll bar */
+  .custom-scrollbar {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
+  }
+  
+  .custom-pagination {
+    background-color: green !important;
+    color: white !important;
+    border-color: green !important;
+  }
+  
+  /* Webkit browsers (Chrome, Safari) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    /* Hide scrollbar */
+  }
+  
+  .custom-scrollbar:hover {
+    scrollbar-width: thin;
+    /* Show scrollbar for Firefox on hover */
+  }
+  
+  /* Webkit browsers (Chrome, Safari) */
+  .custom-scrollbar:hover::-webkit-scrollbar {
+    width: 8px;
+    /* Adjust the width as needed */
+  }
+  
+  .custom-scrollbar:hover::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    /* Track color */
+  }
+  
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Thumb color */
+    border-radius: 10px;
+    /* Optional: make the thumb rounded */
+    border: 2px solid #e0e0e0;
+    /* Match track color for better look */
+  }
+  
+  .table-container {
+    height: 620px;
+  }
+  
+  .common-serach-model {
+    background-color: #F8F9F9;
+  }
+  
+  .common-serach-model:hover {
+    background-color: #E5E7E9;
+  }
+  
+  .common-transition {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .common-transition:hover {
+    transform: scale(1.03);
+  }
+  
+  .common-member-container {
+    background-color: white !important;
+  }
+  
+  .common-member-container:hover {
+    background-color: #F0F5FC !important;
+  }
+  
+  .delete-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .delete-button:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+  
+  }
+
+  /* sidebar */
+
+  .side-bar-body {
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--third);
+}
+
+.side-bar-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.menu-text {
+    font-size: 8;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link.active {
+    background-color: var(--secondary) !important;
+    color: white;
+}
+
+.nav-link.active:hover {
+    background-color: var(--secondary);
+}
+
+.nav-link:hover {
+    transform: scale(1.03);
+    color: rgb(52, 69, 114)
+}
+
+.side-bar-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.side-bar-content-text {
+    color: white;
+}
+
+.side-bar-content-text-inactive {
+    color: white;
+}
+
+.item-lable-text{
+    display: none;
+}
+
+@media only screen and (max-width: 576px) {
+    .item-lable-text {
+        display: inline-block !important;
+    }
+
+    .side-bar-logo {
+        width: 30%;
+    }
+}
+/* side end */
+
+/* navBar.css */
+.main-navbar {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  height: 8vh;
+  z-index: 100 !important; /* Ensuring a high z-index */
+  position: sticky; /* or fixed, depending on your layout needs */
+  top: 0;
+}

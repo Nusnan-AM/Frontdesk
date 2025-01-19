@@ -1,0 +1,57 @@
+<div class="modal fade" id="PassangerViewModel" aria-hidden="true" aria-labelledby="exampleModalToggleViewLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3" style="height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleViewLabel">Passenger Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST"
+                    action="{% if form_data.id %}{% url 'passenger_view' form_data.id %}{% else %}{% url 'passenger' %}{% endif %}">
+                    {% csrf_token %}
+                    {% if form_data.id %}
+                    <input type="hidden" name="_method" value="PATCH">
+                    {% endif %}
+                    <div class="mb-3">
+                        <label class="form-label">Registration Number:</label>
+                        <p class="form-control-plaintext">{{ form_data.registration_number|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Passport Number:</label>
+                        <p class="form-control-plaintext">{{ form_data.passport_number|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">First Name:</label>
+                        <p class="form-control-plaintext">{{ form_data.first_name|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name:</label>
+                        <p class="form-control-plaintext">{{ form_data.last_name|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">NIC:</label>
+                        <p class="form-control-plaintext">{{ form_data.nic|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mobile Number:</label>
+                        <p class="form-control-plaintext">{{ form_data.mobile|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Telephone:</label>
+                        <p class="form-control-plaintext">{{ form_data.telephone|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address:</label>
+                        <p class="form-control-plaintext">{{ form_data.email|default:'N/A' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Address:</label>
+                        <p class="form-control-plaintext">{{ form_data.address|default:'N/A' }}</p>
+                    </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
