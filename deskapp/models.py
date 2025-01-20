@@ -33,6 +33,3 @@ class Passenger(models.Model):
     email = models.TextField(validators=[email_validator],unique=True, null=False)
     address= models.TextField(null=False)
 
-
-    def __str__(self):
-        return self.task_title
