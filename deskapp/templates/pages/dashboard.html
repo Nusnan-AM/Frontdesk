@@ -31,7 +31,7 @@
                             style="z-index: 1000;">
                             <div class="w-100 align-items-center align-content-center text-center">
                                 <a class="text-decoration-none">
-                                    <img class="side-bar-logo" src="{% static 'logo.jpg' %}" loading="lazy" />
+                                    <img  src="{% static 'logo.jpg' %}" loading="lazy"  style="height:10 0px;"/>
                                 </a>
                             </div>
                             <hr class="text-white" />
@@ -79,7 +79,7 @@
 
                 <div class="mt-4 p-3">
                     <div class="d-flex justify-content-end align-items-end ">
-                        <a href="{% url 'passenger_create' %}" class="btn  btn-sm">
+                        <a href="{% url 'passenger_create' %}" class="btn btn-sm">
                             <button type="button" class="btn btn-primary text-white item-lable-text">
                                 Add Passenger
                             </button>
@@ -89,7 +89,8 @@
                     <div class="d-flex justify-content-start">
                         <form class="d-flex" role="search" method="get" action="{% url 'passenger_search' %}">
                             <input class="form-control me-2" type="search" name="query" placeholder="Search by Passport or NIC" aria-label="Search">
-                            <button class="btn btn-outline-primary" type="submit">Search</button>
+                            <button class="btn btn-outline-primary me-2" type="submit">Search</button>
+                            <a href="{% url 'passenger' %}" class="btn btn-secondary">Clear</a>
                         </form>
                     </div>
                     <!-- Table -->
