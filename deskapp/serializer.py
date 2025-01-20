@@ -12,7 +12,7 @@ class PassengerSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'password', 'is_superuser', 'first_name', 'last_name', 'email']
+        fields = ['username', 'password', 'is_superuser', 'email']
         extra_kwargs = {
             'password': {
                 'write_only': True,
