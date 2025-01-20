@@ -1,14 +1,9 @@
 from django.shortcuts import render
-from .serializer import UserSerializer, PassengerSerializer
-from rest_framework.authtoken.views import Token
-from rest_framework import status
+from .serializer import PassengerSerializer
 from .models import  Passenger
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from django.utils import timezone
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.db import models
 
@@ -180,97 +175,4 @@ class PassengerView(APIView):
   
 
     
-    # @login_required
-    # def dashboard(request,id=None,view=None):
-    #     atributes = {}
-    #     if request.method == 'POST':
-    #         data = {
-    #             'registration_number': request.POST.get('registration_number'),
-    #             'passport_number': request.POST.get('passport_number'),
-    #             'first_name': request.POST.get('first_name'),
-    #             'last_name': request.POST.get('last_name'),
-    #             'nic': request.POST.get('nic'),
-    #             'mobile': request.POST.get('mobile'),
-    #             'telephone': request.POST.get('telephone'),
-    #             'email': request.POST.get('email'),
-    #             'address': request.POST.get('address'),
-    #         }
-            
-    #         serializer = PassengerSerializer(data=data)
-
-    #         if request.POST.get('_method') == 'PATCH' and id:
-    #              passenger = Passenger.objects.get(id=id)
-    #              serializer = PassengerSerializer(passenger, data=request.POST, partial=True)
-
-            
-    #         if serializer.is_valid():
-    #             serializer.save()
-    #             atributes['register_success'] = True
-    #         else:
-    #             atributes['register_success'] = False
-    #             atributes['form_error_message'] = serializer.errors
-    #             atributes['form_data'] = data
-    #             atributes['open_modal'] = True 
-
-    #     if request.method == 'GET' and id is not None:  
-    #         passenger = get_object_or_404(Passenger, id=id)  
-    #         atributes['form_data'] = passenger
-    #         atributes['open_modal'] = True
-    #         if view:
-    #               atributes['view_model'] = True     
-           
-    #     passengers = Passenger.objects.all()
-    #     atributes['passengers'] = passengers
-    #     return render(request, 'pages/dashboard.html', atributes)
-        
-    
-
-
-    # def get(self, request, *args, **kwargs):
-    #     pk = kwargs.get('pk')
-    #     if pk:
-    #         try:
-    #             passengers = Passenger.objects.get(id=pk)
-    #             serializer = PassengerSerializer(passengers, many=False)
-    #             return Response(serializer.data, status=status.HTTP_200_OK)
-
-    #         except Passenger.DoesNotExist:
-    #             return Response({"message": "Passenger not found"}, status=status.HTTP_404_NOT_FOUND)
-    #     else:
-    #         passengers = Passenger.objects.all()
-    #         serializer = PassengerSerializer(passengers, many=True)
-    #         return Response({"data": serializer.data}, status=status.HTTP_200_OK);
-
-    # def post(self, request, *args, **kwargs):
-    #     serializer = PassengerSerializer(data=request.data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response({"message": "Passenger added successfully"}, status=status.HTTP_201_CREATED)
-    #     else:
-    #         return Response({"message": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-
-    # def put(self, request, *args, **kwargs):
-    #     pk = kwargs.get('pk')
-    #     try:
-    #         passenger = Passenger.objects.get(id=pk)
-    #         serializer = PassengerSerializer(instance=passenger, data=request.data)
-    #         if serializer.is_valid():
-    #             serializer.save()
-    #             return Response({"message": "Passenger edited successfully"}, status=status.HTTP_200_OK)
-    #         else:
-    #             return Response({"message": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-
-    #     except Passenger.DoesNotExist:
-    #         return Response({"message": "Passenger not found"}, status=status.HTTP_404_NOT_FOUND)
-
-    # def delete(self, request, *args, **kwargs):
-    #     pk = kwargs.get('pk')
-    #     try:
-    #         passenger = Passenger.objects.get(id=pk)
-    #         passenger.delete()
-    #         return Response({"message": "Passenger deleted successfully"}, status=status.HTTP_200_OK)
-
-    #     except Passenger.DoesNotExist:
-    #         return Response({"message": "Passenger not found"}, status=status.HTTP_404_NOT_FOUND)
-
-
+  
